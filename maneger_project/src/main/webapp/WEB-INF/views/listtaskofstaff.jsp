@@ -354,7 +354,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 												<td><c:out value="${s.index + 1}" /></td>
 												<td><c:out value="${task.taskName}" /></td>
 												<td><c:out value="${task.nameCreate}" /></td>
-												<td><c:out value="${task.nameAssign}" /></td>
+												<td><c:out value="${task.staffId.fullName}" /></td>
 												<td><c:out value="${task.dateCreate}" /></td>
 												<td><div class="progress"
 														style="background-color: yellow">
