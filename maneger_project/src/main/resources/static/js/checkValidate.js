@@ -129,3 +129,13 @@ function validatenumber() {
 		return true;
 	}
 }
+function validatedatelog(){
+	var datelog= document.getElementById("dateLog").value;
+	var start = document.getElementById("startdate").value;
+	if ((Date.parse(datelog) < Date.parse(start) )) {
+		alert("Bạn log tiến độ task thì thời gian log phải lớn hơn thời gian bắt đầu tạo task !");
+		return false;
+	}
+
+	return true;
+}

@@ -305,9 +305,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 										value="/task/${task.taskId}/taskprogress/save" var="saveURL" />
 									<fieldset>
 										<form:form modelAttribute="taskprogress" method="POST"
-											action="${saveURL}" cssClass="well form-horizontal" onsubmit="return validatenumber()">
+											action="${saveURL}" cssClass="well form-horizontal" onsubmit="return validatedatelog() && validatenumber()">
 
 											<div id="taskInfo" >
+												<div class="form-group" style="display: none">
+													<label class="control-label col-sm-2 requiredField"
+														for="date"> Task start date <span class="asteriskField">
+															* </span>
+													</label>
+													<div class="col-md-8 inputGroupContainer">
+														<div class="input-group">
+															<span class="input-group-addon"><i
+																class="glyphicon glyphicon-book"></i></span>
+															<form:input path="taskId" cssClass="form-control"
+																id="startdate" value="${task.dateStart}" readonly="true" />
+														</div>
+													</div>
+												</div>
 												<div class="form-group" style="display: none">
 													<label class="control-label col-sm-2 requiredField"
 														for="date"> Task Id <span class="asteriskField">
