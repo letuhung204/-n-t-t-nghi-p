@@ -9,3 +9,7 @@ sau khi đăng ký thành công đăng nhập vào phần mềm và trải nghi�
 
 Note : hiện tại project chưa validate được thời gian log vào, nên khi thực hiện log tiến độ task cần log đúng thèo timeline trên đồ thị. nếu log sai sẽ báo lỗi 500.
 log chuẩn dữ liệu chạy sẽ OK. Mọi chức năng hoạt động tốt.
+
+khi tạo database xong.
+run dòng code để sử dụng tiếng việt
+ALTER DATABASE rangdongdev7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
