@@ -290,7 +290,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Main content -->
 			<section class="content">
 				<div class="container">
-					<img alt="" src="images/addStaff.png" style="width:40%">
+					<img alt="" src="images/addStaff.png" style="width:30%">
 					<table class="table table-striped">
 						<tbody>
 							<tr>

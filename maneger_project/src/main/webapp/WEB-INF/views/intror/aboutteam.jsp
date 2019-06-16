@@ -281,7 +281,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Main content -->
 			<section class="content"
 				style="background-image: url(/images/backgroud.jpg)">
-				<div class="container">
+				<div class="container" style="width: 90%">
 					<div class="row">
 						<div class="text-center">
 							<h1>Thông Tin Về Các Thành Viên Trong Nhóm</h1>
@@ -293,7 +293,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 										src="images/hung.jpg" /> <span> Tôi là Lê Tử Hùng,
 										Sinh viên năm 5 hệ kỹ sư chuyên ngành Điện Tử - Truyền Thông Trường đại
 										học Bách Khoa hà nội. Định hướng nghề nghiệp của tôi là trở
-										thành lập trình viên giàu kinh nghiệm, kỹ năng ngôn ngữ chính của tôi là Java-Web và Angular.  </span>
+										thành lập trình, kỹ năng ngôn ngữ chính của tôi là Java-Web và Angular. </span>
 								</div>
 							</div>
 							<div class="col-md-4">

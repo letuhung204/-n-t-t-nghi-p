@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-<base href="http://localhost:8080/" >
+<base href="http://localhost:8080/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>AdminLTE 2 | Starter</title>
@@ -42,7 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
 	crossorigin="anonymous" />
 <!-- Custom style -->
- <script src="../../js/checkValidate.js"></script>
+<script src="../../js/checkValidate.js"></script>
 
 <style>
 .bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p,
@@ -268,7 +268,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								Management</span></a></li>
 
 					<li class="active"><a class="" href="/project"><i
-							class="glyphicon glyphicon-glass"></i> <span>Project Management</span></a></li>
+							class="glyphicon glyphicon-glass"></i> <span>Project
+								Management</span></a></li>
 					<li class="active"><a class="" href="/getfeedback"><i
 							class="glyphicon glyphicon-wrench"></i> <span>FeedBack
 								Management</span></a></li>
@@ -371,7 +372,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 														<div class="input-group-addon">
 															<i class="fa fa-calendar"> </i>
 														</div>
-														<form:input class="form-control" id="createDate"
+														<form:input class="form-control" id="createDate" value="2019-06-15"
 															name="createDate" path="createDate" type="date" />
 													</div>
 												</div>
@@ -381,16 +382,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 													for="date"> Start Date <span class="asteriskField">
 														* </span>
 												</label>
-												<div class="col-md-8 inputGroupContainer">
-													<div class="input-group">
-														<div class="input-group-addon">
-															<i class="fa fa-calendar"> </i>
+													<div class="col-md-8 inputGroupContainer">
+														<div class="input-group">
+															<div class="input-group-addon">
+																<i class="fa fa-calendar"> </i>
+															</div>
+															<form:input class="form-control" id="startDate"
+																value="" name="startDate" path="startDate"
+																type="date" />
 														</div>
-														<form:input class="form-control" id="startDate"
-															name="startDate" path="startDate" type="date" />
-													</div>
-												</div>
-											</div>
+													</div></div>
 											<div class="form-group">
 												<label class="control-label col-sm-2 requiredField"
 													for="date"> Deadline <span class="asteriskField">
@@ -402,15 +403,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 															<i class="fa fa-calendar"> </i>
 														</div>
 														<form:input class="form-control" id="deadlineDate"
-															name="deadlineDate" path="deadlineDate"
-															type="date" />
+															name="deadlineDate" path="deadlineDate" type="date" />
 													</div>
 												</div>
 											</div>
 											<div class="form-group" style="display: none">
 												<label class="control-label col-sm-2 requiredField"
-													for="date"> Finish Actual Date 
-												</label>
+													for="date"> Finish Actual Date </label>
 												<div class="col-md-8 inputGroupContainer">
 													<div class="input-group">
 														<div class="input-group-addon">
@@ -466,14 +465,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 											<div class="form-group">
 												<label class="control-label col-sm-2 requiredField">
-													Project Ouput 
-												</label>
+													Project Ouput </label>
 												<div class="col-md-8 inputGroupContainer">
 													<div class="input-group">
 														<span class="input-group-addon"><i
 															class="glyphicon glyphicon-folder-open"></i></span>
 														<form:input path="projectOutput" cssClass="form-control"
-															 placeholder="Project Ouput" />
+															placeholder="Project Ouput" />
 													</div>
 												</div>
 											</div>
@@ -481,7 +479,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 											<div class="text-center">
 												<button type="submit" class="btn btn-primary">Save</button>
 												<a type="button" class="btn btn-primary" href="/project"
-												 onclick="return confirm('Bạn chắc chắn muốn ngừng thực hiện tác vụ không ?')">Cancel</a>
+													onclick="return confirm('Bạn chắc chắn muốn ngừng thực hiện tác vụ không ?')">Cancel</a>
 											</div>
 
 										</form:form>

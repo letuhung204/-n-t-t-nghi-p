@@ -158,7 +158,6 @@ public class TaskController {
 		}
 		taskProgress.setTaskId(task);
 		taskProgress.setDateLog(new Date());
-		taskProgress.setConfirm(0);
 		mav.addObject("taskprogress", taskProgress);
 		mav.addObject(task);
 		mav.setViewName("progresstaskform");

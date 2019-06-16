@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-<base href="http://localhost:8080/" >
+<base href="http://localhost:8080/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>AdminLTE 2 | Starter</title>
@@ -257,7 +257,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								Management</span></a></li>
 
 					<li class="active"><a class="" href="/project"><i
-							class="glyphicon glyphicon-glass"></i> <span>Project Management</span></a></li>
+							class="glyphicon glyphicon-glass"></i> <span>Project
+								Management</span></a></li>
 					<li class="active"><a class="" href="/getfeedback"><i
 							class="glyphicon glyphicon-wrench"></i> <span>FeedBack
 								Management</span></a></li>
@@ -298,8 +299,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<tbody>
 							<tr>
 								<td colspan="1">
-<!-- 								<img alt="" src="/images/staff.png" -->
-<!-- 									style="width: 100%; height: 120%"> -->
+									<!-- 								<img alt="" src="/images/staff.png" --> <!-- 									style="width: 100%; height: 120%"> -->
 									<h2>Staff Form</h2> <spring:url value="/staff/save"
 										var="saveURL" />
 									<fieldset>
@@ -367,7 +367,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 														<span class="input-group-addon"><i
 															class="glyphicon glyphicon-user"></i></span>
 														<form:input path="fullName" cssClass="form-control"
-															id="fullname" placeholder="Full name" required="true" />
+															id="fullname" placeholder="Full name" />
 													</div>
 												</div>
 											</div>
@@ -391,7 +391,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 														<span class="input-group-addon"><i
 															class="glyphicon glyphicon-home"></i></span>
 														<form:input path="possition" cssClass="form-control"
-															id="possition" placeholder="Possition" required="true" />
+															id="possition" placeholder="Possition" />
 													</div>
 												</div>
 											</div>
@@ -412,26 +412,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-2 control-label">Skill <span
-													style="color: red"> * </span></label>
+												<label class="col-md-2 control-label">Skill </label>
 												<div class="col-md-8 inputGroupContainer">
 													<div class="input-group">
 														<span class="input-group-addon"><i
 															class="glyphicon glyphicon-book"></i></span>
-														<form:input path="skill" cssClass="form-control"
-															id="skill" placeholder="Skill" required="true" />
+														<form:textarea path="skill" id="skill"
+															placeholder="nhập kỹ năng của bạn" class="form-control"
+															 rows="4"></form:textarea>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-2 control-label">Phone Number <span
-													style="color: red"> * </span></label>
+												<label class="col-md-2 control-label">Phone Number</label>
 												<div class="col-md-8 inputGroupContainer">
 													<div class="input-group">
 														<span class="input-group-addon"><i
 															class="glyphicon glyphicon-earphone"></i></span>
 														<form:input path="telephone" cssClass="form-control"
-															id="telephone" placeholder="Phone Number" required="true" />
+															id="telephone" placeholder="Phone Number"  />
 													</div>
 												</div>
 											</div>
@@ -452,22 +451,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
 													</div>
 												</div>
 											</div>
-
-											<div class="form-group">
-												<label class="col-md-2 control-label">Account Name<span
-													style="color: red"> * </span></label>
-												<div class="col-md-8 inputGroupContainer">
-													<div class="input-group">
-														<span class="input-group-addon"><i
-															class="glyphicon glyphicon-th-list"></i></span>
-														<form:select path="accountId" class="form-control"
-															id="sel1" style="height:30px" required="required">
-															<form:option value="" label="--- Select ---" />
-															<form:options items="${accounts }" id="accounts" />
-														</form:select>
+											<c:choose>
+												<c:when test="${not empty staff.accountId}">
+													<div class="form-group" style="display: none">
+														<label class="col-md-2 control-label">Account Name<span
+															style="color: red"> * </span></label>
+														<div class="col-md-8 inputGroupContainer">
+															<div class="input-group">
+																<span class="input-group-addon"><i
+																	class="glyphicon glyphicon-th-list"></i></span>
+																<form:select path="accountId" class="form-control"
+																	id="sel1" style="height:30px" required="required">
+																	<form:option value="" label="--- Select ---" />
+																	<form:options items="${accounts }" id="accounts" />
+																</form:select>
+															</div>
+														</div>
 													</div>
-												</div>
-											</div>
+												</c:when>
+												<c:otherwise>
+													<div class="form-group">
+														<label class="col-md-2 control-label">Account Name<span
+															style="color: red"> * </span></label>
+														<div class="col-md-8 inputGroupContainer">
+															<div class="input-group">
+																<span class="input-group-addon"><i
+																	class="glyphicon glyphicon-th-list"></i></span>
+																<form:select path="accountId" class="form-control"
+																	id="sel1" style="height:30px" required="required">
+																	<form:option value="" label="--- Select ---" />
+																	<form:options items="${accounts }" id="accounts" />
+																</form:select>
+															</div>
+														</div>
+													</div>
+												</c:otherwise>
+											</c:choose>
+
 
 											<div class="form-group">
 												<label class="col-md-2 control-label">Description</label>
@@ -488,7 +508,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 													onclick="return confirm('Bạn chắc chắn muốn ngừng thực hiện tác vụ không ?')">Cancel</a>
 											</div>
 										</form:form>
-									</fieldset></td>
+									</fieldset>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -497,4 +518,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 			<!-- /.content -->
-		<jsp:include page="layout/footer.jsp" />
+			<jsp:include page="layout/footer.jsp" />

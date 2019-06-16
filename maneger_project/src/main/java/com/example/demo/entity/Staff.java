@@ -72,13 +72,10 @@ public class Staff implements Serializable {
     @Basic(optional = false)
     @Column(name = "email")
     private String email;
-    @Basic(optional = false)
     @Column(name = "possition")
     private String possition;
-    @Basic(optional = false)
     @Column(name = "skill")
     private String skill;
-    @Basic(optional = false)
     @Column(name = "telephone")
     private String telephone;
     @Column(name = "discription")

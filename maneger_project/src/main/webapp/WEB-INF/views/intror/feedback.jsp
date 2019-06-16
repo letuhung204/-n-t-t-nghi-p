@@ -283,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<section class="content"
 				style="background-image: url(images/backgroud.jpg)">
 				<div class="content">
-					<div class="main" style="width: 35%; margin-top: -3%">
+					<div class="main" style="width: 35%; margin-top: -4%">
 						<h1>Feedback Widget</h1>
 						<spring:url value="/feedback/save" var="saveURL" />
 						<form:form class="form-horizontal" modelAttribute="feedback"

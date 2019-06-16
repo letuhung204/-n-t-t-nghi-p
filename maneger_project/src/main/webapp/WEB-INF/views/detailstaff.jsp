@@ -310,7 +310,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<!-- /.col -->
 
 						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-6">
 							<div class="info-box">
 								<span class="info-box-icon bg-red"><i
 									class="fa fa-id-card-o"></i></span>
@@ -323,7 +323,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<!-- /.info-box -->
 						</div>
 						<!-- /.col -->
-						<div class="col-md-3 col-sm-6 col-xs-12">
+
+						<!-- /.col -->
+					</div>
+					<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
 							<div class="info-box">
 								<span class="info-box-icon bg-navy"><i
 									class="fa fa-university"></i></span>
@@ -335,10 +339,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 							<!-- /.info-box -->
 						</div>
-
-						<!-- /.col -->
-					</div>
-					<div class="row">
 						<div class="col-md-3 col-sm-6 col-xs-12">
 							<div class="info-box">
 								<span class="info-box-icon bg-teal"><i
@@ -351,7 +351,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 							<!-- /.info-box -->
 						</div>
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-6">
 							<div class="info-box">
 								<span class="info-box-icon bg-blue"><i
 									class="fa fa-thumb-tack"></i></span>
@@ -363,7 +363,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 							<!-- /.info-box -->
 						</div>
-						<div class="col-sm-6">
+
+					</div>
+					<div class="row">
+					<div class="col-sm-6">
 							<div class="info-box">
 								<span class="info-box-icon bg-yellow"><i
 									class="fa fa-envelope-o"></i></span>
@@ -375,10 +378,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 							<!-- /.info-box -->
 						</div>
-
-					</div>
-					<div class="row">
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-6">
 							<div class="info-box">
 								<span class="info-box-icon bg-maroon"><i
 									class="fa fa-building"></i></span>
@@ -390,7 +390,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</div>
 							<!-- /.info-box -->
 						</div>
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-6">
 							<div class="info-box">
 								<span class="info-box-icon bg-lime"><i
 									class="fa fa-flag-o"></i></span>

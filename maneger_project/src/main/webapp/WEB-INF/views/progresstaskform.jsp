@@ -259,7 +259,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								Management</span></a></li>
 
 					<li class="active"><a class="" href="/project"><i
-							class="glyphicon glyphicon-glass"></i> <span>Project Management</span></a></li>
+							class="glyphicon glyphicon-glass"></i> <span>Project
+								Management</span></a></li>
 					<li class="active"><a class="" href="/getfeedback"><i
 							class="glyphicon glyphicon-wrench"></i> <span>FeedBack
 								Management</span></a></li>
@@ -296,7 +297,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Main content -->
 			<section class="content">
 				<div class="container">
-					<img alt="" src="https://www.digite.com/wp-content/uploads/2019/03/Daily-Tasks.png">
+					<img alt=""
+						src="https://www.digite.com/wp-content/uploads/2019/03/Daily-Tasks.png">
 					<table class="table table-striped">
 						<tbody>
 							<tr>
@@ -304,24 +306,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									<h2>Log Task For Daily Work Form</h2> <spring:url
 										value="/task/${task.taskId}/taskprogress/save" var="saveURL" />
 									<fieldset>
+									
 										<form:form modelAttribute="taskprogress" method="POST"
-											action="${saveURL}" cssClass="well form-horizontal" onsubmit="return validatedatelog() && validatenumber()">
+											action="${saveURL}" cssClass="well form-horizontal"
+											onsubmit="return validatedatelog() && validatenumber()">
+											
+											<div id="taskInfo">
 
-											<div id="taskInfo" >
-												<div class="form-group" style="display: none">
-													<label class="control-label col-sm-2 requiredField"
-														for="date"> Task start date <span class="asteriskField">
-															* </span>
-													</label>
-													<div class="col-md-8 inputGroupContainer">
-														<div class="input-group">
-															<span class="input-group-addon"><i
-																class="glyphicon glyphicon-book"></i></span>
-															<form:input path="taskId" cssClass="form-control"
-																id="startdate" value="${task.dateStart}" readonly="true" />
-														</div>
-													</div>
-												</div>
 												<div class="form-group" style="display: none">
 													<label class="control-label col-sm-2 requiredField"
 														for="date"> Task Id <span class="asteriskField">
@@ -333,6 +324,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 																class="glyphicon glyphicon-book"></i></span>
 															<form:input path="taskId" cssClass="form-control"
 																id="taskId" value="${task.taskId}" readonly="true" />
+																<form:input path="taskId" cssClass="form-control"
+																id="startdate" value="${task.dateStart}" readonly="true" />
 														</div>
 													</div>
 												</div>
@@ -398,4 +391,105 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 			<!-- /.content -->
-			<jsp:include page="layout/footer.jsp" />
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Main Footer -->
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="pull-right hidden-xs">GVHD: Nguyễn Thanh Bình</div>
+			<!-- Default to the left -->
+			<strong>Team Graduation Project <a href="#">Phát triển phần mềm quản lý tiến độ
+				</a>
+			</strong> Hùng-Thành-Đại.
+		</footer>
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+				<li class="active"><a href="#control-sidebar-home-tab"
+					data-toggle="tab"><i class="fa fa-home"></i></a></li>
+				<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i
+						class="fa fa-gears"></i></a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Home tab content -->
+				<div class="tab-pane active" id="control-sidebar-home-tab">
+					<h3 class="control-sidebar-heading">Recent Activity</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript::;"> <i
+								class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+								<div class="menu-info">
+									<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+									<p>Will be 23 on April 24th</p>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /.control-sidebar-menu -->
+
+					<h3 class="control-sidebar-heading">Tasks Progress</h3>
+					<ul class="control-sidebar-menu">
+						<li><a href="javascript::;">
+								<h4 class="control-sidebar-subheading">
+									Custom Template Design <span
+										class="label label-danger pull-right">70%</span>
+								</h4>
+
+								<div class="progress progress-xxs">
+									<div class="progress-bar progress-bar-danger"
+										style="width: 70%"></div>
+								</div>
+						</a></li>
+					</ul>
+					<!-- /.control-sidebar-menu -->
+
+				</div>
+				<!-- /.tab-pane -->
+				<!-- Stats tab content -->
+				<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab
+					Content</div>
+				<!-- /.tab-pane -->
+				<!-- Settings tab content -->
+				<div class="tab-pane" id="control-sidebar-settings-tab">
+					<form method="post">
+						<h3 class="control-sidebar-heading">General Settings</h3>
+
+						<div class="form-group">
+							<label class="control-sidebar-subheading"> Report panel
+								usage <input type="checkbox" class="pull-right" checked>
+							</label>
+
+							<p>Some information about this general settings option</p>
+						</div>
+						<!-- /.form-group -->
+					</form>
+				</div>
+				<!-- /.tab-pane -->
+			</div>
+		</aside>
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+		<div class="control-sidebar-bg"></div>
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- REQUIRED JS SCRIPTS -->
+
+	<!-- jQuery 2.2.0 -->
+	<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.6 -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="dist/js/app.min.js"></script>
+
+	<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
+</html>

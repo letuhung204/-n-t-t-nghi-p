@@ -22,4 +22,6 @@ public interface TaskProgressService {
 
 	void createTaskProgress(TaskProgress taskProgress);
 	
+	void deleteTaskProgressById(long id);
+	
 }

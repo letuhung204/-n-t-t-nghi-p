@@ -109,7 +109,7 @@ function validatedateproject() {
 	var start = document.getElementById("startDate").value;
 	var dateline = document.getElementById("deadlineDate").value;
 
-	if ((Date.parse(start) <= Date.parse(create))) {
+	if ((Date.parse(start) < Date.parse(create))) {
 		alert("Thời gian bắt đầu dự án phải sau thời gian tạo dự án !");
 		return false;
 	}
