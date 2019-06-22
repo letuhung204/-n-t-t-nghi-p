@@ -50,9 +50,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<header class="main-header">
 
 			<!-- Logo -->
-			<a href="/welcome" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>R</b>Đ</span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Rạng Đông</b> Company</span>
+		<a href="/welcome" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>E</b>O</span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>E-Office</b> Software</span>
 			</a>
 
 			<!-- Header Navbar -->
@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 											<!-- start message --> <a href="#">
 												<div class="pull-left">
 													<!-- User Image -->
-													<img src="dist/img/hung.jpg" class="img-circle"
+													<img src="images/user.png" class="img-circle"
 														alt="User Image">
 												</div> <!-- Message title and timestamp -->
 												<h4>
@@ -156,13 +156,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<li class="dropdown user user-menu">
 							<!-- Menu Toggle Button --> <a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"> <!-- The user image in the navbar-->
-								<img src="dist/img/hung.jpg" class="user-image" alt="User Image">
+								<img src="images/user.png" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
 								<span class="hidden-xs">${username}</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
-								<li class="user-header"><img src="dist/img/hung.jpg"
+								<li class="user-header"><img src="images/user.png"
 									class="img-circle" alt="User Image">
 
 									<p>
@@ -213,7 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel">
 					<div class="pull-left image">
-						<img src="dist/img/hung.jpg" class="img-circle" alt="User Image">
+						<img src="images/user.png" class="img-circle" alt="User Image">
 					</div>
 					<div class="pull-left info">
 						<p>${username}</p>
@@ -295,8 +295,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<a href="#introduction">Introduction</a>
 						</h2>
 						<p class="lead">
-							<b>Project Manager</b> là project Tốt nghiệp của nhóm 3 sinh viên
-							viện Điện Tử - Truyền Thông, trường đại học Bách Khoa Hà Nội.
+							<b>E-Office Software</b>
 							Trong thời đại công nghệ ai cũng biết công ty nào cũng vậy muốn
 							tồn tại và phát triển thì phải có nhân tố con người. Cùng với tốc
 							độ phát triển mạnh mẽ của Công nghệ thông tin các lập trình viên
@@ -391,11 +390,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<!-- Main Footer -->
 		<footer class="main-footer">
 			<!-- To the right -->
-			<div class="pull-right hidden-xs">GVHD: Nguyễn Thanh Bình</div>
+			<div class="pull-right hidden-xs">Nguyễn Đình Tài</div>
 			<!-- Default to the left -->
-			<strong>Team Graduation Project <a href="#">Rạng Đông
-					Company</a>
-			</strong> Hùng - Thành - Đại.
+			<strong>Team Project <a href="/welcome">E-Office Software</a>
+			</strong> 
 		</footer>
 
 		<!-- Control Sidebar -->

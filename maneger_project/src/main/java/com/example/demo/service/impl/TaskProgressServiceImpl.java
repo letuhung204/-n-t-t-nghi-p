@@ -16,7 +16,7 @@ import com.example.demo.service.ProjectProgressService;
 import com.example.demo.service.ProjectService;
 import com.example.demo.service.TaskProgressService;
 import com.example.demo.service.TaskService;
-import com.example.demo.utility.Util;
+import com.example.demo.validation.Util;
 
 @Service
 public class TaskProgressServiceImpl implements TaskProgressService {

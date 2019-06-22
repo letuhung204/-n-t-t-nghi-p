@@ -4,11 +4,10 @@
 		<!-- Main Footer -->
 		<footer class="main-footer">
 			<!-- To the right -->
-			<div class="pull-right hidden-xs">GVHD: Nguyễn Thanh Bình</div>
+			<div class="pull-right hidden-xs">Nguyễn Đình Tài</div>
 			<!-- Default to the left -->
-			<strong>Team Graduation Project <a href="#">Rạng Đông
-					Company</a>
-			</strong> Hùng - Thành - Đại.
+			<strong>Team Project <a href="/welcome">E-Office Software</a>
+			</strong> 
 		</footer>
 
 		<!-- Control Sidebar -->

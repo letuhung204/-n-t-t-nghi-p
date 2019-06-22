@@ -35,7 +35,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="/login"><b>Rang Dong </b>Login</a>
+			<a href="/login"><b>E-Office </b>Login</a>
 		</div>
 		<c:if test="${not empty param.error}">
 			<div class="alert alert-danger" role="alert">Sai Tên Hoặc Mật

@@ -11,7 +11,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-<base href="http://localhost:8080/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>AdminLTE 2 | Starter</title>
@@ -28,6 +27,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
+<link rel="stylesheet"
+	href="../../plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
@@ -36,6 +37,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
 <link href="../static/images/logo.png" href="@{/images/logo.png}"
 	rel="shortcut icon" />
+
+<!-- Custom style -->
+<link href="css/style.css" href="@{/css/style.css}" rel="stylesheet" />
+
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet"
@@ -44,12 +49,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Custom style -->
 <link href="../static/css/style.css" href="@{/css/style.css}"
 	rel="stylesheet" />
-<script src="/js/checkValidate.js"></script>
-<style type="text/css">
-.asteriskField {
-	color: red;
-}
-</style>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 
@@ -165,7 +164,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							data-toggle="dropdown"> <!-- The user image in the navbar-->
 								<img src="dist/img/hung.jpg" class="user-image" alt="User Image">
 								<!-- hidden-xs hides the username on small devices so only the image appears. -->
-								<span class="hidden-xs">${accountName}</span>
+								<span class="hidden-xs">${username}</span>
 						</a>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
@@ -173,7 +172,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									class="img-circle" alt="User Image">
 
 									<p>
-										Lê Tử Hùng - Web Developer <small>Member since Nov.
+										${username} - Web Developer <small>Member since Nov.
 											2019</small>
 									</p></li>
 								<!-- Menu Body -->
@@ -223,7 +222,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<img src="dist/img/hung.jpg" class="img-circle" alt="User Image">
 					</div>
 					<div class="pull-left info">
-						<p>Lê Tử Hùng</p>
+						<p>${username}</p>
 						<!-- Status -->
 						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
@@ -258,15 +257,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							class="glyphicon glyphicon-user"></i> <span>Staff
 								Management</span></a></li>
 
-					<li class="treeview"><a href="/project"><i
-							class="glyphicon glyphicon-glass"></i> <span>Project
-								Management</span> <i class="fa fa-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li><a href="/project"><i
-									class="glyphicon glyphicon-folder-open"></i> Project Management</a></li>
-							<li><a href="#"><i
-									class="glyphicon glyphicon-folder-open"></i> Task Management</a></li>
-						</ul></li>
+					<li class="active"><a class="" href="/project"><i
+							class="glyphicon glyphicon-glass"></i> <span>Project Management</span></a></li>
 					<li class="active"><a class="" href="/getfeedback"><i
 							class="glyphicon glyphicon-wrench"></i> <span>FeedBack
 								Management</span></a></li>

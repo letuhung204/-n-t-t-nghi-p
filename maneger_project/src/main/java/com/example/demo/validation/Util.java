@@ -6,7 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import com.example.demo.entity.ProjectProgress;
+import com.example.demo.entity.Task;
 import com.example.demo.entity.TaskProgress;
+import com.example.demo.service.TaskProgressService;
 
 public final class Util {
     public static List<Date> getListDate(Date startDate, Date finishDate, Date lastDateFromLog) {
@@ -146,5 +148,37 @@ public final class Util {
         }
         return listProgress;
     }
+    
+    public static long getTrestOfBigTask(Task task, Date moment, TaskProgressService taskProgressService) {
+      if (moment.getTime() <= task.getDateStart().getTime()) {
+          return (task.getDeadlineDate().getTime() - task.getDateStart().getTime());
+      } else {
+          TaskProgress taskProgress = taskProgressService.findLastTaskProgressOfTaskBefore(moment, task.getTaskId());
+          if (taskProgress == null || (taskProgress != null && taskProgress.getProgress() == 0)) {
+              return (task.getDeadlineDate().getTime() - task.getDateStart().getTime());
+          } else {
+              return (100 - taskProgress.getProgress()) * (moment.getTime() - task.getDateStart().getTime())
+                      / taskProgress.getProgress();
+          }
+      }
+
+  }
+
+  /* khong co dan, lay progress tren bao cao */
+
+  public static long getTrest(Task task, Date moment, TaskProgressService taskProgressService) {
+      if (moment.getTime() <= task.getDateStart().getTime()) {
+          return (task.getFinishDate().getTime() - task.getDateStart().getTime());
+      } else {
+          TaskProgress taskProgress = taskProgressService.findLastTaskProgressOfTaskBefore(moment, task.getTaskId());
+          if (taskProgress == null || (taskProgress != null && taskProgress.getProgress() == 0)) {
+              return (task.getFinishDate().getTime() - task.getDateStart().getTime());
+          } else {
+              return (100 - taskProgress.getProgress())
+                      * (task.getFinishDate().getTime() - task.getDateStart().getTime()) / 100;
+          }
+      }
+
+  }
 
 }
