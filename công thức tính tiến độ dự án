@@ -1,0 +1,56 @@
+Mô hình ước lượng tiến độ dự án
+
+1.	Đặt vấn đề
+Đối với người quản lý dự án, việc quản lý được tiến độ dự án có ý nghĩa quan trọng trong việc đảm bảo hoàn thành dự án đúng thời gian và khối lượng yêu cầu. Một trong những nhiệm vụ then chốt của quản lý tiến độ dự án là cần ước lượng được tiến độ dự án tại một thời điểm nào đó (thường là thời điểm hiện tại), dựa trên các tiến độ công việc thành phần của dự án đã thực hiện được, so với toàn bộ yêu cầu của dự án, tức là trả lời được hai câu hỏi:
+
+Câu hỏi 1:  Bao nhiêu phần trăm dự án đã được thực hiện vào thời điểm đó?
+
+Câu hỏi 2: Tiến độ đó so với kế hoạch có đạt được yêu cầu không? (có thể có ba mức: tốt nếu sớm hơn kế hoạch, đạt nếu xấp xỉ kế hoạch, và không tốt nếu quá chậm so với kế hoạch).
+
+Báo cáo này nhằm đề xuất một mô hình phù hợp để có thể trả lời đầy đủ 2 câu hỏi nói trên.
+
+2.	Mô hình
+Một số giả thiết:
+-	H1: Năng suất lao động của các thành viên thực hiện dự án là như nhau, và không thay đổi trong suốt quá trình thực hiện dự án.
+-	H2: Tổng thời gian thực hiện các công việc của dự án không lớn hơn thời gian thực hiện dự án (Lưu ý khái niệm tổng thời gian sẽ được làm rõ hơn ở phần sau, khi chúng ta tính đến cả các công việc làm tuần tự và song song). 
+Một dự án P (project) gồm các thông tin:
+-	Tb(P): thời gian bắt đầu thực hiện dự án (ngày cụ thể, vd 20/05/2018)
+-	Tc(P): thời gian cần hoàn thành (theo số ngày, vd 365 ngày)
+-	Các công việc thành phần A1, A2, …, An (activity). Mỗi công việc Ai lại có các thông tin: 
+o	Thời gian bắt đầu công việc Tb(Ai) (ngày cụ thể)
+o	Thời gian cần hoàn thành Tc(Ai) (số lượng ngày, vd 90 ngày)
+o	Tiến độ đã hoàn thành tính đến thời điểm t: C(Ai, t) (theo tỉ lệ phần trăm công việc).
+o	Danh sách tiền công việc (hay công việc bị phụ thuộc): là những công việc cần hoàn thành trước khi thực hiện công việc Ai, tức là Ai phụ thuộc vào những công việc này. Trong hệ thống này, chúng tôi coi giữa mỗi cặp công việc sẽ tồn tại một trong hai quan hệ: phụ thuộc hoặc độc lập. Nếu chúng phụ thuộc nhau thì thứ tự thực hiện sẽ tuần tự, còn ngược lại chúng có thể được thực hiện song song.   
+-	Từ thời gian bắt đầu thực hiện và thời gian cần hoàn thành, ta sẽ suy được thời gian mà dự án/công việc sẽ kết thúc: Tf = Tb + Tc.
+Mối quan hệ giữa các thông tin trên được biểu diễn ở Hình dưới đây.
+
+-	Ta cần tính được hai đại lượng:
+o	Cexp(P, t): tiến độ theo kế hoạch của dự án tại thời điểm t;
+o	Creal(P, t): tiến độ thực tế theo khối lượng các công việc đã hoàn thành của dự án đến thời điểm t;
+Từ các mô tả trên, chúng ta tiến hành xây dựng các công thức tính tiến độ. 
+Tiến độ theo kế hoạch 
+Tiến độ theo kế hoạch của dự án tính đến thời điểm t, được ước lượng thuần túy theo đơn vị thời gian, và nó sẽ là tỉ lệ giữa thời gian đã làm với thời gian cần hoàn thành dự án, tức là: 
+Cexp(P, t)  = (t – Tb(P))/Tc(P) (%)	(1)
+
+Ngoài ra, còn một cách tính khác áp dụng không chỉ cho tiến độ theo kế hoạch và còn cho tiến độ thực tế, đó là: 
+Cexp(P, t) = 100% - Crest(P, t)		(2)
+Trong đó Crest(P, t) là tỉ lệ công việc còn phải làm (chỉnh là tỉ lệ giữa thời gian còn phải làm của dự án và thời gian cần hoàn thành dự án) và được tính đơn giản theo công thức:
+Crest(P, t) = (Tf(P) - t)/Tc(P) = (Tb(P) + Tc(P) – t)/Tc(P)	(3)
+Thay (3) vào (2) ta sẽ có công thức (1). Công thức (3) tính Crest(P, t) ở trên được gọi là đơn giản vì ta chưa tính đến quan hệ phụ thuộc/độc lập giữa các công việc trong dự án. Khi tính đến cả các quan hệ này, thì thời gian còn thực hiện của dự án sẽ được tính trên việc tổng hợp thời gian còn thực hiện trên các công việc, nên sẽ cho được công thức ước lượng chính xác hơn. Tuy nhiên, cách tính sẽ phức tạp hơn, nên chúng ta sẽ dành cách tính này để tính cho tiến độ thực tế ở phần sau.
+Tiến độ thực tế
+Tiến độ thực tế của dự án tính đến thời điểm t là tiến độ mà dựa theo tiến độ đã hoàn thành của các công việc trong dự án. Ta sẽ áp dụng cách tiếp cận như tính công thức (2) ở trên để tính đại lượng này, nhưng sẽ tính đến cả các quan hệ độc lập/phụ thuộc giữa các công việc. Trước khi đi vào công thức tính, chúng ta trước hết lưu ý đến một số tính chất sau:
+-	Tính chất 1: nếu hai công việc Ai và Aj độc lập với nhau, và có thời gian còn lại cần hoàn thành tương ứng là Trest(Ai) và Trest(Aj). Khi đó, thời gian còn lại cần hoàn thành cả hai công việc sẽ là: 
+Trest(Ai, Aj) = max (Trest(Ai), Trest(Aj))
+-	Tính chất 2: nếu hai công việc Ai và Aj phụ thuộc nhau, và có thời gian còn lại cần hoàn thành tương ứng là Trest(Ai) và Trest(Aj). Khi đó, thời gian còn lại cần hoàn thành cả hai công việc sẽ là: 
+Trest(Ai, Aj) = Trest(Ai) + Trest(Aj)
+Hai tính chất trên dễ dàng mở rộng cho một nhóm công việc độc lập hoặc phụ thuộc nhau. 
+Tính tiến độ thực tế: áp dụng chiến lược của công thức (2) ở trên, ta có:
+Creal(P, t) = 100% - Crest(P, t)		(4)
+Chú ý: Crest(P,t) trong công thức (4) là tỉ lệ dự án còn phải thực hiện, nó có ý nghĩa tương tự với số hạng này trong công thức (2). Tuy nhiên, giá trị này trong (4) được tính theo tiến độ thực tế còn lại (tức là dựa theo tiến độ thực tế đến thời điểm t). Còn trong công thức (2), giá trị này chỉ được ước lượng thuần túy theo thời gian còn lại của dự án.
+Giả sử các công việc trong dự án P nằm trong hai nhóm:
+-	Nhóm Pind: gồm các công việc độc lập nhau;
+-	Nhóm Pdep: gồm các công việc phụ thuộc nhau;
+Khi đó ta có:
+Crest(P, t) = Crest((Pind, Pdep), t)
+= max (Crest(Pind, t), Crest(Pdep, t)) (5)
+Trong đó, việc tính các giá trị Crest(Pind, t) và Crest(Pdep, t) dựa theo hai tính chất 1 & 2 đã nói ở trên.
